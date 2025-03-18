@@ -14,22 +14,16 @@ export const QuizCreateForm = ({ initialData = null, onSave }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!initialData) {
-      const savedQuiz = localStorage.getItem('quiz');
-      if (savedQuiz) {
-        setQuiz(JSON.parse(savedQuiz));
-      }
-    } else {
+    if (initialData) {
       setQuiz(initialData);
+    } else {
+      const savedQuiz = localStorage.getItem('quiz');
+      if (savedQuiz) setQuiz(JSON.parse(savedQuiz));
     }
   }, [initialData]);
 
   useEffect(() => {
-    if (
-      quiz.title !== '' ||
-      quiz.description !== '' ||
-      quiz.questions.length > 0
-    ) {
+    if (quiz.title || quiz.description || quiz.questions.length) {
       localStorage.setItem('quiz', JSON.stringify(quiz));
     }
   }, [quiz]);

@@ -12,6 +12,7 @@
 }
 
 .quizFormHeader h2 {
+  text-align: center;
   font-size: 2rem;
   margin-bottom: 10px;
   font-weight: 600;
