@@ -1,0 +1,17 @@
+:root {
+}
+
+html,
+body {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+body {
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

@@ -1,0 +1,127 @@
+.quizQuestionsItem {
+  max-width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}
+
+.quizQuestionItemBody > p {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.quizQuestionItemBody > p span {
+  color: red;
+}
+
+.quizQuestionItemHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quizQuestionItemHeader p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quizQuestionItemHeader p > :nth-child(1) {
+  padding: 5px;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.answerTypeSelect {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #e7e7e7;
+  outline: none;
+  border-radius: 5px;
+  font-family: 'JetBrain Mono', monospace;
+}
+
+.answerTypeSelect option {
+  padding: 10px;
+}
+
+.quizQuestionItemBody textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  resize: none;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  outline: none;
+}
+
+.quizAnswers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quizAnswersItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+}
+
+.quizAnswersItem:nth-last-child(1) {
+  margin-bottom: 20px;
+}
+
+.quizAnswersItem input[type='text'] {
+  font-size: 1rem;
+  padding: 10px;
+  flex: 1;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  line-height: 1.5;
+  border: none;
+  outline: none;
+}
+
+.quizAnswersItem > *:nth-child(3) {
+  border-radius: 5px;
+  color: #ff8181;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.quizAnswersItem > *:nth-child(3):hover {
+  background-color: #ff8181;
+  color: #ffffff;
+}
+
+.addFormAnswer {
+  width: max-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px dotted #666666;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+
+.addFormAnswer:hover {
+  background-color: #f7f7f7;
+}
