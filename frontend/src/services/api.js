@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://eliftech-quiz-app-backend.onrender.com/api';
 
 const fetchWrapper = async (url, options = {}) => {
   const response = await fetch(url, options);
