@@ -62,7 +62,7 @@ export const QuizForm = () => {
 
     try {
       const response = await fetch(
-        'http://localhost:5000/api/responses/submit',
+        'https://eliftech-quiz-app-backend.onrender.com/api/responses/submit',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
