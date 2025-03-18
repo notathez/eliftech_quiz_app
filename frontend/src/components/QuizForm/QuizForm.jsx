@@ -202,7 +202,18 @@ export const QuizForm = () => {
                   (answer) => answer.questionId === question._id,
                 );
                 const isCorrect = checkAnswer(question, userAnswer?.answer);
+                let correctAnswer;
 
+                if (question.type === 'Text') {
+                  correctAnswer = question.correctAnswers.join(', ');
+                } else {
+                  correctAnswer = question.answers
+                    .filter(
+                      (answer, index) =>
+                        question.correctAnswers[index] === 'true',
+                    )
+                    .join(', ');
+                }
                 return (
                   <li
                     key={question._id}
@@ -218,7 +229,7 @@ export const QuizForm = () => {
                       {userAnswer?.answer || 'No answer'}
                     </p>
                     <p>
-                      <strong>Correct answer:</strong> {question.correctAnswer}
+                      <strong>Correct answer:</strong> {correctAnswer}
                     </p>
                   </li>
                 );

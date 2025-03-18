@@ -8,6 +8,10 @@ export const QuizListItem = ({ data, onDelete }) => {
   const navigate = useNavigate();
   const [responses, setResponses] = useState([]);
 
+  const date = new Date(data.createdAt);
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-GB', options);
+
   useEffect(() => {
     const fetchResponses = async () => {
       const data = await getResponses();
@@ -41,7 +45,7 @@ export const QuizListItem = ({ data, onDelete }) => {
           Number of completions: <span>{completionsCount}</span>
         </p>
       </div>
-      <small className={styles.quizData}>{data.dateCreated}</small>
+      <small className={styles.quizData}>{formattedDate}</small>
     </div>
   );
 };

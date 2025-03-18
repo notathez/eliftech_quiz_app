@@ -14,10 +14,25 @@ export const QuizCreateForm = ({ initialData = null, onSave }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (initialData) {
+    if (!initialData) {
+      const savedQuiz = localStorage.getItem('quiz');
+      if (savedQuiz) {
+        setQuiz(JSON.parse(savedQuiz));
+      }
+    } else {
       setQuiz(initialData);
     }
   }, [initialData]);
+
+  useEffect(() => {
+    if (
+      quiz.title !== '' ||
+      quiz.description !== '' ||
+      quiz.questions.length > 0
+    ) {
+      localStorage.setItem('quiz', JSON.stringify(quiz));
+    }
+  }, [quiz]);
 
   const handleAddQuestion = () => {
     setQuiz((prevQuiz) => ({
@@ -94,6 +109,7 @@ export const QuizCreateForm = ({ initialData = null, onSave }) => {
       console.error('Error saving quiz:', error);
     }
 
+    localStorage.removeItem('quiz');
     navigate('/');
   };
 
