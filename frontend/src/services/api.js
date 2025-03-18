@@ -30,5 +30,10 @@ export const updateQuizById = (quizId, quizData) =>
     body: JSON.stringify(quizData),
   });
 
+export const deleteQuiz = (quizId) =>
+  fetchWrapper(`${API_URL}/quizzes/${quizId}`, {
+    method: 'DELETE',
+  });
+
 // RESPONSES
 export const getResponses = () => fetchWrapper(`${API_URL}/responses`);

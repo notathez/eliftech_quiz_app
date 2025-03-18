@@ -1,29 +1,15 @@
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './quizListItem.module.css';
 import { DropDown } from '../DropDown/DropDown';
-import { getResponses } from '../../services/api';
 
-export const QuizListItem = ({ data, onDelete }) => {
+export const QuizListItem = ({ data, onDelete, responses }) => {
   const navigate = useNavigate();
-  const [responses, setResponses] = useState([]);
 
   const date = new Date(data.createdAt);
   const options = { year: 'numeric', month: 'short', day: 'numeric' };
   const formattedDate = date.toLocaleDateString('en-GB', options);
 
-  useEffect(() => {
-    const fetchResponses = async () => {
-      const data = await getResponses();
-      setResponses(data);
-    };
-    fetchResponses();
-  }, []);
-
-  const quizResponses = responses.filter(
-    (response) => response.quizId === data._id,
-  );
-  const completionsCount = quizResponses.length;
+  const completionsCount = responses.length;
 
   return (
     <div className={styles.quizItem}>

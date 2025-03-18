@@ -1,6 +1,7 @@
 .catalogToolbar {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -13,5 +14,22 @@
   background-color: transparent;
   outline: none;
   border: 1px solid #e7e7e7;
+  cursor: pointer;
+}
+
+.sortBy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sortBy select {
+  font-family: 'JetBrain Mono', monospace;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e7e7e7;
+  font-size: 1rem;
+  outline: none;
   cursor: pointer;
 }
